@@ -9,12 +9,13 @@ module.exports = app => {
 
         const { Stat } = app.api.stat;
 
-        const lastStat = await Stat.findOne({}, {}, { sort: { 'createAt': -1 } })
+        const lastStat = await Stat.findOne({}, {}, { sort: { 'createdAt': -1 } })
 
         const stat = new Stat({
             users: usersCount.count,
             categories: categoriesCount.count,
-            articles: articlesCount.count
+            articles: articlesCount.count, 
+            createdAt: new Date()
         })
 
         const changeUsers = !lastStat || stat.users !== lastStat.users;
