@@ -26,7 +26,7 @@ module.exports = app => {
                 notExistsOrError(userFromDB, 'Usuário já cadastrado!');
             }
         } catch (msg) {
-            resp.status(400).send(msg);
+            return  resp.status(400).send(msg);
         }
 
         user.password = encryptPassword(user.password);
@@ -49,5 +49,11 @@ module.exports = app => {
         .catch(error => resp.status(500).send(error))
     }
 
-    return { save, get }
+    const getById = (req, resp) => {
+        app.db('users').select('id', 'name', 'email', 'admin').where({ id: req.params.id }).first()
+        .then(user => resp.json(user))
+        .catch(error => resp.status(500).send(error))
+    }
+
+    return { save, get, getById }
 }

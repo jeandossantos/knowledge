@@ -1,0 +1,21 @@
+module.exports = app => {
+    const Stat = app.mongoose.model('Stat', {
+        user: Number,
+        categories: Number,
+        articles: Number,
+        createdAt: Date
+    })
+
+    const get = (req, resp) => {
+        Stat.findOne({}, {}, { sort: { 'createdAt': -1 } })
+            .then(stat => {
+                const defaultStat = {
+                    user: 0,
+                    categories: 0,
+                    articles: 0,
+                }
+                resp.json(stat || defaultStat)
+            })
+    }
+    return { Stat, get }
+}
