@@ -38,10 +38,10 @@ module.exports = app => {
         }
     }
 
-    const limit = 10;
+    const limit = 3;
 
     const get = async (req, resp) => {
-        const page = req.params.page || 1;
+        const page = req.query.page || 1;
 
         const result = await app.db('articles').count('id').first();
         count = parseInt(result.count);
@@ -63,7 +63,7 @@ module.exports = app => {
 
     const getByCategory = async (req, resp) => {
         const categoryId = req.params.id;
-        const page = req.params.page || 1;
+        const page = req.query.page || 1;
         const categories = await app.db.raw(queries.categoryWithChildren, categoryId);
         const ids = categories.rows.map(c => c.id);
 
