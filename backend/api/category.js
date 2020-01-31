@@ -84,7 +84,7 @@ module.exports = app => {
     }
 
     const getById = (req, resp) => {
-        app.db('categories').where({ id: req.params.id })
+        app.db('categories').where({ id: req.params.id }).first()
             .then(category => resp.json(category))
     }
 
