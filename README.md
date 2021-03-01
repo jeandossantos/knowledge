@@ -1,6 +1,6 @@
 # Gerenciador de Tarefas
 
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/TXTDBR/gerenciador_de_tarefas/blob/master/LICENSE) 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/jeandossantos/knowledge/blob/master/LICENSE) 
 
 # Sobre o projeto
 
