@@ -4,7 +4,7 @@
 
 # Sobre o projeto
 
-Sistema de postagem de artigos com administração.
+Sistema de artigos com administração.
 
 Está aplicação foi desenvolvida no final do Curso Web Moderno Completo com JavaScript 2021 + Projetos da plataforma de ensino Udemy com o professor Leonardo Moura Leitao.
 
