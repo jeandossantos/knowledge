@@ -26,7 +26,7 @@ Está aplicação foi desenvolvida no final do Curso Web Moderno Completo com Ja
 - PostgreSQL
 - MongoDB
 - Knex.js
-- Autenticação com Passport usando estratégia JWT
+- JWT
 ## Front end
 - Vue JS
 - Vuex
